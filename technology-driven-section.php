@@ -1,5 +1,5 @@
 
-<section class="services tech-driven-section py-5">
+<section class="tech-driven-section py-5">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="fw-bold">Technology Driven</h2>
@@ -16,7 +16,7 @@
       <div class="col-lg-6">
         <div class="card p-4 mb-4 shadow border-0 rounded-4">
           <div class="d-flex align-items-center">
-            <img src="img/influencer_pic1.png" class="img-fluid rounded me-3" style="width: 100px;" alt="Influencer">
+            <img src="img/Influencer_pic1.png" class="img-fluid rounded me-3" style="width: 100px;" alt="Influencer">
             <div>
               <h5 class="fw-bold mb-1">Influencers</h5>
               <p class="text-muted mb-2">
