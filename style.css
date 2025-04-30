@@ -1,0 +1,246 @@
+
+/* Reset and Global */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styling */
+.navbar-nav .nav-link {
+  color: #5f6368;
+  margin-left: 20px;
+  font-weight: 500;
+}
+.navbar-nav .nav-link:hover {
+  color: #4d4dff;
+}
+
+/* Hero Section Styling */
+.hero-section {
+  background: white;
+  padding-top: 0;
+  padding-bottom: 3rem;
+  margin-top: 0 !important;
+}
+.hero-section .text-primary {
+  color: #4d4dff !important;
+}
+.hero-section .icon-tags span {
+  font-weight: 500;
+  color: #5f6368;
+}
+.hero-section .icon-tags i {
+  font-size: 18px;
+  color: #4d4dff;
+}
+.hero-girl {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Growth Stats Styling */
+.growth-status {
+  margin-top: 4rem;
+}
+.growth-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #c1c1c1;
+}
+.growth-item p {
+  font-size: 1.1rem;
+  color: #a1a1a1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section .display-5 {
+    font-size: 2rem;
+  }
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+  .hero-section .icon-tags {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .growth-status .growth-item h3 {
+    font-size: 2rem;
+  }
+}
+
+
+/* Growth Stats Styling */
+.growth-status {
+  margin-top: 4rem;
+}
+.growth-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6c757d;
+}
+.growth-item p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .growth-item h3 {
+    font-size: 1.75rem;
+  }
+  .growth-item p {
+    font-size: 0.95rem;
+  }
+}
+
+.tech-driven-section h2,
+.tech-driven-section h3 {
+  margin-bottom: 0.5rem;
+}
+.tech-driven-section p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.tech-driven-section .card {
+  border-radius: 12px;
+}
+.tech-driven-section .card img {
+  object-fit: cover;
+  max-height: 120px;
+}
+@media (max-width: 767px) {
+  .tech-driven-section .card img {
+    max-height: 100px;
+  }
+  .tech-driven-section .card .row {
+    flex-direction: column;
+  }
+}
+
+.tech-driven-section .card {
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+.tech-driven-section .btn-sm {
+  padding: 6px 20px;
+  font-size: 0.85rem;
+  border-radius: 30px;
+}
+.tech-driven-section h2, .tech-driven-section h3 {
+  margin-bottom: 0.3rem;
+}
+
+/* Equal height image to match right content */
+.signup-img-equal {
+  height: 100%;
+  max-height: 450px;
+  object-fit: cover;
+}
+@media (max-width: 991px) {
+  .signup-img-equal {
+    max-height: 100%;
+  }
+}
+
+/* Match left image height to stacked right cards on large screens */
+@media (min-width: 992px) {
+  .tech-driven-section .signup-girls-equal-height {
+    height: 440px;
+    object-fit: cover;
+  }
+}
+
+/* Responsive tuning for Technology Driven section */
+@media (max-width: 991px) {
+  .tech-driven-section .signup-girls-equal-height {
+    height: auto !important;
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .tech-driven-section .card .d-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tech-driven-section .card img {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Enforce mobile stacking and proper spacing for tech-driven layout */
+@media (max-width: 576px) {
+  .tech-driven-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .tech-driven-section .signup-girls-equal-height {
+    height: auto !important;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-driven-section .card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .tech-driven-section .card .d-flex {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .tech-driven-section .card .d-flex img {
+    width: 80px;
+    height: auto;
+  }
+
+  .tech-driven-section .card .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+.services-section h2 span {
+  color: #6c5ce7;
+}
+
+.services-section .service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.services-section .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.services-section img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 576px) {
+  .services-section .service-card {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  .services-section img {
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .services-section h6 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services-section .row.g-4 > div {
+    flex: 0 0 auto;
+    width: 16.66%;
+  }
+}
