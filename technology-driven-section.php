@@ -1,5 +1,5 @@
 
-<section class="tech-driven-section py-5">
+<section class="services tech-driven-section py-5">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="fw-bold">Technology Driven</h2>
