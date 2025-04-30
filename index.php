@@ -28,6 +28,7 @@
   <?php include 'services-section.php'; ?>
   <?php include 'technology-driven-section.php'; ?>
   <?php include 'category-section.php'; ?>
-  <?php include 'footer.php'; ?>
+  <?php include 'faq-section.php'; ?>
+<?php include 'footer.php'; ?>
 </body>
 </html>
