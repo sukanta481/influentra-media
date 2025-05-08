@@ -1,4 +1,6 @@
-<?php ?>
+<?php 
+include_once __DIR__ . '/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +16,7 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="#">
-      <img src="/img/logo.png" alt="Logo" height="30">
+      <img src="<?= $base_url ?>/img/logo.png" alt="Logo" height="30">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>

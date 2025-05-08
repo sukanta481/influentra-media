@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../includes/config.php';
 echo <<<HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@ echo <<<HTML
 <nav class="navbar navbar-expand-lg navbar-light bg-white admin-header sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold" href="#">
-      <img src="../img/logo.png" alt="Logo" style="height: 40px;">
+      <img src="<?= $base_url ?>/img/logo.png" alt="Logo" style="height: 40px;">
     </a>
     <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#adminSidebar" aria-controls="adminSidebar">
       ☰
