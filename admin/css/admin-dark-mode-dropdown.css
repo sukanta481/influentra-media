@@ -1,0 +1,15 @@
+
+/* Dark mode dropdown fix */
+body.bg-dark .dropdown-menu {
+  background-color: #343a40 !important;
+  color: #f8f9fa !important;
+  border-color: #444 !important;
+}
+
+body.bg-dark .dropdown-menu .dropdown-item {
+  color: #f8f9fa !important;
+}
+
+body.bg-dark .dropdown-menu .dropdown-item:hover {
+  background-color: #495057 !important;
+}

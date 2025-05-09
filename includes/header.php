@@ -27,7 +27,7 @@ include_once __DIR__ . '/config.php';
         <li class="nav-item"><a class="nav-link" href="#">Influencers</a></li>
         <li class="nav-item"><a class="nav-link" href="pages/blog.php">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/contact-us.php">Contact</a></li>
     </ul>
       </div>
     </div>
