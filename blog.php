@@ -1,11 +1,10 @@
-
 <?php
-include '../includes/db.php';
-include '../includes/header.php';
+include __DIR__ . '/includes/db.php';
+include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- Core theme CSS -->
-<link href="../css/styles.css" rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
 
 <!-- Page header with logo and tagline -->
 <header class="py-1 bg-light border-bottom mb-4">
@@ -31,7 +30,7 @@ include '../includes/header.php';
                 $slug = $row['slug'];
                 $author = $row['author'];
                 $date = date('F d, Y', strtotime($row['published_at']));
-                $thumbnail = !empty($row['thumbnail']) ? '../admin/' . $row['thumbnail'] : '../img/blog-placeholder.png';
+                $thumbnail = !empty($row['thumbnail']) ? 'admin/' . $row['thumbnail'] : 'img/blog-placeholder.png';
                 $excerpt = substr(strip_tags($row['content']), 0, 150) . '...';
             ?>
             <!-- Blog post -->
@@ -91,6 +90,6 @@ include '../includes/header.php';
 </div>
 
 <!-- Scripts -->
-<script src="../js/scripts.js"></script>
+<script src="js/scripts.js"></script>
 
-<?php include '../includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/db.php';
+include __DIR__ . '/includes/db.php';
 
 $slug = $_GET['slug'] ?? '';
 $stmt = $conn->prepare("SELECT * FROM blogs WHERE slug = ?");
@@ -11,17 +11,17 @@ $blog = $result->fetch_assoc();
 
 if (!$blog) {
     echo "<div style='padding: 20px; color: red;'>Blog not found.</div>";
-    include '../includes/footer.php';
+    include __DIR__ . '/includes/footer.php';
     exit;
 }
 
-include '../includes/header.php';
+include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- Page content -->
 <div class="container mt-5">
     <div class="row">
-        <!-- Blog entries -->
+        <!-- Blog content -->
         <div class="col-lg-8">
             <article>
                 <header class="mb-4">
@@ -29,7 +29,7 @@ include '../includes/header.php';
                     <div class="text-muted fst-italic mb-2">Published on <?= date('F j, Y', strtotime($blog['published_at'])) ?> by <?= htmlspecialchars($blog['author']) ?></div>
                 </header>
                 <?php if (!empty($blog['thumbnail'])): ?>
-                    <figure class="mb-4"><img class="img-fluid rounded" src="../<?= $blog['thumbnail'] ?>" alt="Blog Thumbnail" /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" src="<?= 'admin/' . $blog['thumbnail'] ?>" alt="Blog Thumbnail" /></figure>
                 <?php endif; ?>
                 <section class="mb-5">
                     <div class="fs-5"><?= $blog['content'] ?></div>
@@ -59,7 +59,6 @@ include '../includes/header.php';
                             <p>If you're going to lead a space frontier, it has to be government; it'll never be private enterprise.</p>
                         </div>
                     </div>
-
                     <div class="d-flex mb-3 ms-5">
                         <img class="rounded-circle me-3" src="https://via.placeholder.com/50" alt="Reply User" />
                         <div>
@@ -67,7 +66,6 @@ include '../includes/header.php';
                             <p>This is a nested reply comment to the original comment.</p>
                         </div>
                     </div>
-
                     <div class="d-flex mb-3">
                         <img class="rounded-circle me-3" src="https://via.placeholder.com/50" alt="User" />
                         <div>
@@ -79,8 +77,9 @@ include '../includes/header.php';
             </div>
         </div>
 
-        <!-- Side widgets -->
+        <!-- Sidebar -->
         <div class="col-lg-4">
+            <!-- Search widget -->
             <div class="card mb-4">
                 <div class="card-header">Search</div>
                 <div class="card-body">
@@ -90,6 +89,8 @@ include '../includes/header.php';
                     </div>
                 </div>
             </div>
+
+            <!-- Categories widget -->
             <div class="card mb-4">
                 <div class="card-header">Categories</div>
                 <div class="card-body">
@@ -100,6 +101,8 @@ include '../includes/header.php';
                     </ul>
                 </div>
             </div>
+
+            <!-- About widget -->
             <div class="card mb-4">
                 <div class="card-header">About This Blog</div>
                 <div class="card-body">Insights on influencer marketing, growth hacks, brand partnerships, and trends that drive engagement.</div>
@@ -108,4 +111,4 @@ include '../includes/header.php';
     </div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>
