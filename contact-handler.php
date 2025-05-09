@@ -1,44 +1,74 @@
 <?php
+require_once 'includes/db.php';
+require_once 'vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 header('Content-Type: application/json');
-include __DIR__ . '/includes/db.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $topic = htmlspecialchars(trim($_POST['topic']));
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $country = htmlspecialchars(trim($_POST['country'] ?? ''));
-    $city = htmlspecialchars(trim($_POST['city'] ?? ''));
-    $phone_code = htmlspecialchars(trim($_POST['phone_code'] ?? ''));
-    $phone_number = htmlspecialchars(trim($_POST['phone_number'] ?? ''));
-    $message = htmlspecialchars(trim($_POST['message']));
-
-    if (!$name || !$email || !$message) {
-        echo json_encode(["success" => false, "message" => "Required fields are missing."]);
-        exit;
-    }
-
-    $stmt = $conn->prepare("INSERT INTO leads (topic, name, email, country, city, phone_code, phone_number, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssss", $topic, $name, $email, $country, $city, $phone_code, $phone_number, $message);
-    $stmt->execute();
-
-    // Email
-    $to = "hello@influentra.media";
-    $headers = "From: $name <$email>\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    $mail_subject = "New Contact Form Submission: " . ($topic ?: "No Subject");
-    $mail_body = "You have received a new message:\n\n"
-        . "Topic: $topic\n"
-        . "Name: $name\n"
-        . "Email: $email\n"
-        . "Country: $country\n"
-        . "City: $city\n"
-        . "Phone: $phone_code $phone_number\n"
-        . "Message:\n$message";
-
-    mail($to, $mail_subject, $mail_body, $headers);
-
-    echo json_encode(["success" => true, "message" => "Thank you! Your message has been sent."]);
-} else {
-    echo json_encode(["success" => false, "message" => "Invalid request."]);
+// reCAPTCHA validation
+function validateRecaptcha($token) {
+    $secret = $_ENV['RECAPTCHA_SECRET']; // set this in .env
+    $response = file_get_contents(
+        "https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$token}"
+    );
+    $result = json_decode($response, true);
+    return $result["success"] === true && $result["score"] >= 0.5;
 }
+
+// Collect and sanitize form data
+$topic = $_POST['topic'] ?? '';
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$country = $_POST['country'] ?? '';
+$city = $_POST['city'] ?? '';
+$code = $_POST['phone_code'] ?? '';
+$phone = $_POST['phone_number'] ?? '';
+$message = $_POST['message'] ?? '';
+$recaptcha = $_POST['g-recaptcha-response'] ?? '';
+
+if (!validateRecaptcha($recaptcha)) {
+    http_response_code(403);
+    echo json_encode(['status' => 'recaptcha_failed']);
+    exit;
+}
+
+// Store lead in DB
+$stmt = $conn->prepare("INSERT INTO leads (topic, name, email, country, city, code, phone, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssssss", $topic, $name, $email, $country, $city, $code, $phone, $message);
+$stmt->execute();
+
+// Send email via Hostinger SMTP
+$mail = new PHPMailer(true);
+try {
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.hostinger.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'hello@influentra.media';
+    $mail->Password   = $_ENV['SMTP_PASS']; // from .env
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+    $mail->setFrom('hello@influentra.media', 'Influentra Contact');
+    $mail->addAddress('hello@influentra.media');
+
+    $mail->isHTML(true);
+    $mail->Subject = "New Contact Query from $name";
+    $mail->Body    = "
+        <h3>New Contact Submission</h3>
+        <p><strong>Topic:</strong> {$topic}</p>
+        <p><strong>Name:</strong> {$name}</p>
+        <p><strong>Email:</strong> {$email}</p>
+        <p><strong>Phone:</strong> {$code} {$phone}</p>
+        <p><strong>Country:</strong> {$country}</p>
+        <p><strong>City:</strong> {$city}</p>
+        <p><strong>Message:</strong><br>{$message}</p>
+    ";
+
+    $mail->send();
+} catch (Exception $e) {
+    error_log("Email failed: {$mail->ErrorInfo}");
+}
+
+echo json_encode(['status' => 'success']);
 ?>
