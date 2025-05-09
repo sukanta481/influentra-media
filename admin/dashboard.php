@@ -8,77 +8,65 @@ include 'includes/db.php';
 include 'includes/header.php';
 include 'includes/sidebar.php';
 
-$influencers = 0;
-$leads = 0;
-$campaigns = 0;
-$blogs = 0;
+$totalInfluencers = $conn->query("SELECT COUNT(*) as total FROM influencers")->fetch_assoc()['total'];
+$totalCampaigns = $conn->query("SELECT COUNT(*) as total FROM campaigns WHERE status = 'Active'")->fetch_assoc()['total'];
+$totalLeads = $conn->query("SELECT COUNT(*) as total FROM leads")->fetch_assoc()['total'];
+$totalBlogs = $conn->query("SELECT COUNT(*) as total FROM blogs")->fetch_assoc()['total'];
 ?>
 
-<style>
-  @media (min-width: 992px) {
-    .with-sidebar {
-      margin-left: 220px;
-    }
-  }
-</style>
+<div class="d-flex flex-column min-vh-100" style="margin-left:220px;">
+  <main class="admin-main flex-grow-1 px-2 px-md-4 py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-bold">Dashboard</h2>
+    </div>
 
-<div class="d-flex flex-column min-vh-100 with-sidebar">
-  <main class="admin-main flex-grow-1 px-3 px-md-4 py-4 mt-5 mt-lg-0">
-    <div class="container-fluid">
-      <h2 class="mb-4">Dashboard</h2>
-      <div class="row g-3 mb-4">
-        <div class="col-md-3"><div class="card text-white bg-primary p-3"><h5 class="mb-0"><?= $influencers ?></h5><small>Total Influencers</small></div></div>
-        <div class="col-md-3"><div class="card text-white bg-info p-3"><h5 class="mb-0"><?= $campaigns ?></h5><small>Active Campaigns</small></div></div>
-        <div class="col-md-3"><div class="card text-white bg-success p-3"><h5 class="mb-0"><?= $leads ?></h5><small>New Leads</small></div></div>
-        <div class="col-md-3"><div class="card text-white bg-secondary p-3"><h5 class="mb-0"><?= $blogs ?></h5><small>Total Blogs</small></div></div>
-      </div>
-      <div class="row g-4 mb-4">
-        <div class="col-12 col-md-6">
-          <div class="card shadow-sm p-3">
-            <h5>Top Influencers</h5>
-            <ul class="list-group list-group-flush mt-3">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Jane Doe <a href="#" class="btn btn-sm btn-primary">View</a>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                John Smith <a href="#" class="btn btn-sm btn-primary">View</a>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Alice Johnson <a href="#" class="btn btn-sm btn-primary">View</a>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Michael Brown <a href="#" class="btn btn-sm btn-primary">View</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="card shadow-sm p-3">
-            <h5>Recent Campaigns</h5>
-            <ul class="list-group list-group-flush mt-3">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Summer Collection <span class="badge bg-success">Active</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Product Launch <span class="badge bg-success">Active</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Holiday Specials <span class="badge bg-secondary">Inactive</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Brand Awareness <span class="badge bg-secondary">Inactive</span>
-              </li>
-            </ul>
-          </div>
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="bg-primary text-white p-3 rounded">
+          <h4><?= $totalInfluencers ?></h4>
+          <p>Total Influencers</p>
         </div>
       </div>
-      <div class="card shadow-sm p-4">
-        <h5>Top Influencers</h5>
-        <div style="height: 120px;" class="d-flex align-items-center justify-content-center text-muted">
-          <em>(Graph Placeholder)</em>
+      <div class="col-md-3">
+        <div class="bg-info text-white p-3 rounded">
+          <h4><?= $totalCampaigns ?></h4>
+          <p>Active Campaigns</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="bg-success text-white p-3 rounded">
+          <h4><?= $totalLeads ?></h4>
+          <p>New Leads</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="bg-secondary text-white p-3 rounded">
+          <h4><?= $totalBlogs ?></h4>
+          <p>Total Blogs</p>
         </div>
       </div>
     </div>
+
+    <div class="card mb-4">
+      <div class="card-header fw-bold">Top Influencers</div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Jane Doe <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            John Smith <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Alice Johnson <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Michael Brown <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </main>
-  <?php include 'includes/footer.php'; ?>
 </div>
+
+<?php include 'includes/footer.php'; ?>
