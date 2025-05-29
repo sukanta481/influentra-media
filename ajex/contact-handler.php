@@ -1,36 +1,32 @@
 <?php
-require_once 'includes/db.php';
-require_once 'vendor/autoload.php';
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+header('Content-Type: application/json');
+require_once '../includes/db.php'; // adjust path if needed
+require_once '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 header('Content-Type: application/json');
+echo json_encode(['success' => true, 'message' => 'Test OK']);
+exit;
 
-// reCAPTCHA validation
-function validateRecaptcha($token) {
-    $secret = $_ENV['RECAPTCHA_SECRET']; // set this in .env
-    $response = file_get_contents(
-        "https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$token}"
-    );
-    $result = json_decode($response, true);
-    return $result["success"] === true && $result["score"] >= 0.5;
-}
 
 // Collect and sanitize form data
-$topic = $_POST['topic'] ?? '';
-$name = $_POST['name'] ?? '';
-$email = $_POST['email'] ?? '';
-$country = $_POST['country'] ?? '';
-$city = $_POST['city'] ?? '';
-$code = $_POST['phone_code'] ?? '';
-$phone = $_POST['phone_number'] ?? '';
-$message = $_POST['message'] ?? '';
-$recaptcha = $_POST['g-recaptcha-response'] ?? '';
+$topic   = trim($_POST['topic'] ?? '');
+$name    = trim($_POST['name'] ?? '');
+$email   = trim($_POST['email'] ?? '');
+$country = trim($_POST['country'] ?? '');
+$city    = trim($_POST['city'] ?? '');
+$code    = trim($_POST['phone_code'] ?? '');
+$phone   = trim($_POST['phone_number'] ?? '');
+$message = trim($_POST['message'] ?? '');
 
-if (!validateRecaptcha($recaptcha)) {
-    http_response_code(403);
-    echo json_encode(['status' => 'recaptcha_failed']);
+// Basic validation
+if (!$topic || !$name || !$email || !$country || !$city || !$code || !$phone || !$message) {
+    http_response_code(422);
+    echo json_encode(['success' => false, 'message' => 'All fields are required.']);
     exit;
 }
 
@@ -51,6 +47,7 @@ try {
     $mail->Port       = 465;
     $mail->setFrom('hello@influentra.media', 'Influentra Contact');
     $mail->addAddress('hello@influentra.media');
+    $mail->addAddress('hello.influentra@gmail.com'); // Send to both
 
     $mail->isHTML(true);
     $mail->Subject = "New Contact Query from $name";
@@ -68,7 +65,12 @@ try {
     $mail->send();
 } catch (Exception $e) {
     error_log("Email failed: {$mail->ErrorInfo}");
+    // Optionally, you can set an error message for the user here
 }
 
-echo json_encode(['status' => 'success']);
+// Always return a JSON response
+echo json_encode([
+    'success' => true,
+    'message' => 'Thank you for contacting us! Our team will reach out to you soon.'
+]);
 ?>

@@ -6,7 +6,7 @@
       <div class="col-lg-6 text-center text-lg-start animated">
         <h1>Discover Top Influencers <br> for Your Brand</h1>
         <p>Connect, Collaborate, and Grow <br> with Influentra Media</p>
-        <a href="#" class="btn btn-primary px-4 py-2 mb-3">Start Now</a>
+        <a href="<?= $base_url ?>/contact.php" class="btn btn-primary px-4 py-2 mb-3">Start Now</a>
         <div class="d-flex justify-content-center justify-content-lg-start gap-3 mb-4">
           
           
