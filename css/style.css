@@ -51,6 +51,7 @@ body {
   color: #a1a1a1;
 }
 
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero-section .display-5 {
@@ -282,3 +283,21 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.card-img-top {
+  width: 100% !important;
+  height: 180px !important;    /* Uniform height for all blog images */
+  object-fit: cover !important;
+  border-radius: 14px !important;
+  margin: 0 0 1rem 0 !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+  display: block;
+}
+
+/* For small screens: smaller images for better look */
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 110px !important;
+  }
+}
+

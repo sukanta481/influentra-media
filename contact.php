@@ -55,7 +55,7 @@
       </form>
     </div>
     <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
-      <img src="img/contact-graphic.png" alt="Contact" class="img-fluid mb-3" style="max-height: 300px;">
+      <img src="img/contact-img.png" alt="Contact" class="img-fluid mb-3" style="max-height: 300px;">
       <div class="text-center">
         <h5 class="fw-bold"><i class="bi bi-geo-alt-fill me-1"></i> Address</h5>
         <p>Softz Solutions & Co Pvt Ltd.<br>796, Purbachal Main Road, Second St,<br>Gitanjali Park, Kolkata – 700078, India</p>

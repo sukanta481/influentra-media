@@ -77,13 +77,30 @@ elseif ($action === 'edit') {
 
 elseif ($action === 'delete') {
     $id = $_POST['id'];
+
+    // 1. Get the thumbnail path first
+    $stmt = $conn->prepare("SELECT thumbnail FROM blogs WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->bind_result($thumbnail);
+    $stmt->fetch();
+    $stmt->close();
+
+    // 2. Delete the image file (if not empty and doesn't look like a placeholder)
+    if (!empty($thumbnail) && strpos($thumbnail, 'uploads/') === 0) {
+        $filePath = __DIR__ . '/../' . $thumbnail;
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+    }
+
+    // 3. Delete the database row
     $stmt = $conn->prepare("DELETE FROM blogs WHERE id = ?");
     $stmt->bind_param("i", $id);
 
     echo $stmt->execute()
-        ? json_encode(["success" => true, "message" => "Blog deleted successfully"])
+        ? json_encode(["success" => true, "message" => "Blog and image deleted successfully"])
         : json_encode(["success" => false, "message" => "Failed to delete blog"]);
-} else {
-    echo json_encode(["success" => false, "message" => "Invalid action"]);
 }
+
 ?>

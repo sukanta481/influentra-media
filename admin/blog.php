@@ -170,8 +170,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = e.target;
     const formData = new FormData(form);
     formData.set("content", tinymce.get("content").getContent());
+    formData.set("action", "add");
 
-    fetch("ajax/add_blog.php", {
+    fetch("ajax/blog_handler.php", {
       method: "POST",
       body: formData
     }).then(res => res.json())
