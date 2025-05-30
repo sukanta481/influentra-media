@@ -9,11 +9,6 @@ require_once '../vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-header('Content-Type: application/json');
-echo json_encode(['success' => true, 'message' => 'Test OK']);
-exit;
-
-
 // Collect and sanitize form data
 $topic   = trim($_POST['topic'] ?? '');
 $name    = trim($_POST['name'] ?? '');
@@ -32,7 +27,7 @@ if (!$topic || !$name || !$email || !$country || !$city || !$code || !$phone || 
 }
 
 // Store lead in DB
-$stmt = $conn->prepare("INSERT INTO leads (topic, name, email, country, city, code, phone, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO leads (topic, name, email, country, city, phone_code, phone_number, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("ssssssss", $topic, $name, $email, $country, $city, $code, $phone, $message);
 $stmt->execute();
 
@@ -52,16 +47,50 @@ try {
 
     $mail->isHTML(true);
     $mail->Subject = "New Contact Query from $name";
-    $mail->Body    = "
-        <h3>New Contact Submission</h3>
-        <p><strong>Topic:</strong> {$topic}</p>
-        <p><strong>Name:</strong> {$name}</p>
-        <p><strong>Email:</strong> {$email}</p>
-        <p><strong>Phone:</strong> {$code} {$phone}</p>
-        <p><strong>Country:</strong> {$country}</p>
-        <p><strong>City:</strong> {$city}</p>
-        <p><strong>Message:</strong><br>{$message}</p>
-    ";
+    $mail->Body = '
+      <div style="max-width:540px;margin:24px auto;padding:24px 18px;background:#f7f9fa;border-radius:14px;font-family:Inter,Arial,sans-serif;font-size:16px;color:#232a31;box-shadow:0 2px 8px rgba(44,62,80,0.05);">
+        <div style="text-align:center;margin-bottom:18px;">
+          <img src="https://influentra.media/img/logo.png" alt="Influentra Media" style="height:40px;">
+        </div>
+        <h2 style="color:#003366;font-size:22px;margin-top:0;margin-bottom:20px;text-align:center;">
+          🚀 New Contact Submission
+        </h2>
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="padding:8px 0;width:130px;"><strong>Topic:</strong></td>
+            <td style="padding:8px 0;">'.htmlspecialchars($topic).'</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;"><strong>Name:</strong></td>
+            <td style="padding:8px 0;">'.htmlspecialchars($name).'</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;"><strong>Email:</strong></td>
+            <td style="padding:8px 0;"><a href="mailto:'.htmlspecialchars($email).'" style="color:#1a73e8;text-decoration:none;">'.htmlspecialchars($email).'</a></td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;"><strong>Phone:</strong></td>
+            <td style="padding:8px 0;">'.htmlspecialchars($code).' '.htmlspecialchars($phone).'</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;"><strong>Country:</strong></td>
+            <td style="padding:8px 0;">'.htmlspecialchars($country).'</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;"><strong>City:</strong></td>
+            <td style="padding:8px 0;">'.htmlspecialchars($city).'</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;vertical-align:top;"><strong>Message:</strong></td>
+            <td style="padding:8px 0;">'.nl2br(htmlspecialchars($message)).'</td>
+          </tr>
+        </table>
+        <div style="border-top:1px solid #eee;margin:28px 0 0 0;padding-top:18px;text-align:center;color:#888;font-size:14px;">
+          Influentra Media<br>
+          <a href="mailto:hello@influentra.media" style="color:#1a73e8;text-decoration:none;">hello@influentra.media</a>
+        </div>
+      </div>
+    ';
 
     $mail->send();
 } catch (Exception $e) {
