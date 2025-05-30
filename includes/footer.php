@@ -19,7 +19,7 @@
         <p>Influentra Media is an influencer marketing platform in the USA, empowering brands across various sectors with measurable engagement strategies.</p>
         <div class="d-flex flex-column flex-sm-row gap-2 mt-3">
           <a href="influencer_contact.php" class="btn btn-primary rounded-pill px-3 w-100 w-sm-auto text-center">I am an Influencer</a>
-          <a href="#" class="btn btn-outline-light rounded-pill px-3 w-100 w-sm-auto text-center">I am a Brand</a>
+          <a href="brand_contact.php" class="btn btn-outline-light rounded-pill px-3 w-100 w-sm-auto text-center">I am a Brand</a>
         </div>
       </div>
 
