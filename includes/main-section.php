@@ -26,7 +26,7 @@
       </div>
       <!-- Right: Image -->
       <div class="col-lg-6 text-center mb-4 mb-lg-0 animated">
-        <img src="img/hero_girl.png" alt="Influencer" class="img-fluid" style="max-height: 520px;">
+        <img src="img/hero_girl.png" alt="Influencer" class="img-fluid" style="max-height: 520px;" loading="lazy">
       </div>
     </div>
   </div>

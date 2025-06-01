@@ -89,7 +89,7 @@
     </div>
     <!-- Contact Info -->
     <div class="col-lg-4 d-flex flex-column justify-content-center align-items-center">
-      <img src="img/contact-img.png" alt="Contact" class="img-fluid mb-3" style="max-height: 280px;">
+      <img src="img/contact-img.png" alt="Contact" class="img-fluid mb-3" style="max-height: 280px;" loading="lazy">
       <div class="text-center px-2">
         <h5 class="fw-bold mb-2"><i class="bi bi-geo-alt-fill me-1"></i> Address</h5>
         <p class="mb-1 small">
