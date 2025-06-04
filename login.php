@@ -46,6 +46,8 @@
         <div class="alert alert-success">Registered successfully! Please log in.</div>
     <?php elseif (isset($_GET['error']) && $_GET['error'] == 'invalid'): ?>
         <div class="alert alert-danger">Invalid email or password.</div>
+    <?php elseif (isset($_GET['reset']) && $_GET['reset'] == 'success'): ?>
+        <div class="alert alert-success">Password reset successful. Please login with your new password.</div>
     <?php endif; ?>
 
     <form action="ajax/login-handler.php" method="POST">
