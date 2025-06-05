@@ -53,7 +53,14 @@ if (!empty($_FILES['media_files']['name'][0])) {
 
             if (move_uploaded_file($tmp_name, $target_file)) {
                 $file_path = 'uploads/media/' . $unique_name;
-                $type = (str_starts_with($_FILES['media_files']['type'][$index], 'image')) ? 'image' : 'video';
+                $file_type = $_FILES['media_files']['type'][$index];
+                if (strpos($file_type, 'image') === 0) {
+                    $type = 'image';
+                } elseif (strpos($file_type, 'video') === 0) {
+                    $type = 'video';
+                } else {
+                    $type = 'video';
+                }
 
                 $insert_media = $conn->prepare("INSERT INTO media_gallery (user_id, file_path, type) VALUES (?, ?, ?)");
                 $insert_media->bind_param("iss", $user_id, $file_path, $type);
