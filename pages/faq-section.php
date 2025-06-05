@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="text-center mt-3">
-      <a href="faq-section.php" class="btn btn-outline-dark">Show More</a>
+      <a href="pages/faq-section-full.php" class="btn btn-outline-dark">Show More</a>
     </div>
   </div>
 </section>
