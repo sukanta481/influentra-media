@@ -9,7 +9,7 @@
           <li><a href="#" class="text-light text-decoration-none">Services</a></li>
           <li><a href="#" class="text-light text-decoration-none">Our Clients</a></li>
           <li><a href="#" class="text-light text-decoration-none">Contact us</a></li>
-          <li><a href="#" class="text-light text-decoration-none">FAQs</a></li>
+          <li><a href="pages/faq-section-full.php" class="text-light text-decoration-none">FAQs</a></li>
         </ul>
       </div>
 
