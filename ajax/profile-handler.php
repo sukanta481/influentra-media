@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id     = $_SESSION['user_id'];
+$role        = isset($_SESSION['role']) ? $_SESSION['role'] : '';
 $bio         = $_POST['bio'];
 $category    = $_POST['category'];
 $instagram   = $_POST['instagram'];
@@ -70,6 +71,16 @@ if (!empty($_FILES['media_files']['name'][0])) {
     }
 }
 
-header("Location: ../admin/dashboard.php");
-exit;
+// Redirect user based on role
+if ($role === 'influencer') {
+    header("Location: ../dashboard-influencer.php");
+    exit;
+} elseif ($role === 'brand') {
+    header("Location: ../dashboard-brand.php");
+    exit;
+} else {
+    // fallback, just in case
+    header("Location: ../login.php");
+    exit;
+}
 ?>
