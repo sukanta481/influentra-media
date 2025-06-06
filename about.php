@@ -26,35 +26,7 @@
     padding-left: 0;
     background: transparent;
   }
-  /* Floating Button */
-  .floating-contact-btn {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    z-index: 1100;
-    background: #4d4dff;
-    color: #fff;
-    border-radius: 50px;
-    padding: 14px 32px;
-    font-weight: 600;
-    box-shadow: 0 6px 24px rgba(80, 110, 255, 0.18);
-    border: none;
-    cursor: pointer;
-    font-size: 1.15rem;
-    transition: transform 0.1s;
-    animation: popin 0.8s cubic-bezier(.6,-0.28,.74,1.24) forwards;
-  }
-  .floating-contact-btn:hover {
-    background: #2f2f94;
-    transform: scale(1.06);
-  }
-  @keyframes popin {
-    0%   { transform: translateY(80px) scale(.85); opacity: 0; }
-    80%  { transform: translateY(-10px) scale(1.04); opacity: 1; }
-    100% { transform: translateY(0) scale(1); opacity: 1; }
-  }
   @media (max-width: 575px) {
-    .floating-contact-btn { right: 1rem; bottom: 1rem; padding: 11px 18px; font-size: 1rem; }
     .about-hero { padding: 1.2rem .6rem 1rem .6rem; }
   }
 </style>
