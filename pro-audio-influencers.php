@@ -4,6 +4,7 @@ $page_description = 'Connect your brand with respected creators in the audio com
 include 'includes/header.php';
 ?>
 <div class="container py-5 simple-page">
+  <img src="img/service-placeholder.jpg" class="img-fluid mb-4 service-cover" alt="Service Cover">
   <h1 class="text-center">Pro Audio Influencers</h1>
   <img class="img-fluid mb-4" src="img/pro-audio-cover.jpg" alt="Pro Audio Influencers">
   <p>Reach musicians, podcasters and audio engineers through authentic creator collaborations that showcase your products in action.</p>

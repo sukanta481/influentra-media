@@ -314,6 +314,14 @@ html {
   margin-bottom: 1rem;
 }
 
+/* Optional cover image styling for service pages */
+.service-cover {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
 
 /* Floating Contact Button */
 .floating-contact-btn {
