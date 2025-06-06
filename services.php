@@ -106,6 +106,7 @@
     <div class="row justify-content-center">
       <!-- Service: Pro Audio Influencers -->
       <div class="col-md-6 col-lg-4 d-flex">
+        <a href="pro-audio-influencers.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
           <img src="img/service1.png" alt="Pro Audio Influencers" class="service-icon mb-2">
           <div class="service-title">🎧 Pro Audio Influencers</div>
@@ -115,9 +116,11 @@
           </div>
           <div class="service-meta">🔍 Target: musicians, producers, audio brands<br>📈 Result: trust, demos, engagement</div>
         </div>
+        </a>
       </div>
       <!-- Service: Social Campaigns -->
       <div class="col-md-6 col-lg-4 d-flex">
+        <a href="social-campaigns.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
           <img src="img/service2.png" alt="Social Campaigns" class="service-icon mb-2">
           <div class="service-title">📣 Social Campaigns</div>
@@ -127,9 +130,11 @@
           </div>
           <div class="service-meta">💡 Platforms: Instagram, TikTok, YouTube<br>🎯 Goal: reach, engagement, visibility</div>
         </div>
+        </a>
       </div>
       <!-- Service: Creative Content -->
       <div class="col-md-6 col-lg-4 d-flex">
+        <a href="creative-content.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
           <img src="img/service3.png" alt="Creative Content" class="service-icon mb-2">
           <div class="service-title">✨ Creative Content</div>
@@ -139,9 +144,11 @@
           </div>
           <div class="service-meta">📷 Deliverables: videos, UGC, stories<br>🔥 Uses: ads, feed, campaigns</div>
         </div>
+        </a>
       </div>
       <!-- Service: Brand Collabs -->
       <div class="col-md-6 col-lg-4 d-flex">
+        <a href="brand-collaborations.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
           <img src="img/service4.png" alt="Brand Collabs" class="service-icon mb-2">
           <div class="service-title">🤝 Brand Collaborations</div>
@@ -151,9 +158,11 @@
           </div>
           <div class="service-meta">🧠 Focus: trust, repeat visibility, results<br>🚀 Ideal: launches, seasonal, ambassadors</div>
         </div>
+        </a>
       </div>
       <!-- Service: Review Generation -->
       <div class="col-md-6 col-lg-4 d-flex">
+        <a href="review-generation.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
           <img src="img/service5.png" alt="Review Generation" class="service-icon mb-2">
           <div class="service-title">🌟 Review Generation</div>
@@ -163,9 +172,11 @@
           </div>
           <div class="service-meta">⭐ Types: unboxing, testimonials<br>🛒 Goal: conversion-focused UGC</div>
         </div>
+        </a>
       </div>
       <!-- Service: Website Development -->
       <div class="col-md-6 col-lg-4 d-flex">
+        <a href="website-development.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
           <img src="img/service6.png" alt="Website Development" class="service-icon mb-2">
           <div class="service-title">💻 Website Development</div>
@@ -175,6 +186,7 @@
           </div>
           <div class="service-meta">🛠️ Tech: HTML, CSS, PHP, Bootstrap<br>🌐 Add-ons: CMS, landing pages</div>
         </div>
+        </a>
       </div>
     </div>
   </div>
