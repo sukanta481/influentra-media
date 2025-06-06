@@ -9,7 +9,10 @@ if (session_status() === PHP_SESSION_NONE) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Influentra</title>
+  <title><?= isset($page_title) ? htmlspecialchars($page_title) : 'Influentra' ?></title>
+  <?php if (isset($page_description)): ?>
+  <meta name="description" content="<?= htmlspecialchars($page_description) ?>">
+  <?php endif; ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="<?= $base_url ?>/css/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
