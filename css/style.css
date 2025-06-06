@@ -301,4 +301,17 @@ html {
   }
 }
 
+/* Basic layout for simple service pages */
+.simple-page h1,
+.simple-page h2,
+.simple-page h3 {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+.simple-page p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
 
