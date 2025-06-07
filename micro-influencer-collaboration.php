@@ -1,8 +1,8 @@
 <?php include 'includes/header.php'; ?>
 <div class="container py-5 simple-page">
   <img src="img/service-placeholder.jpg" class="img-fluid mb-4 service-cover" alt="Service Cover">
-  <h1 class="text-center">Brand Collaborations</h1>
-  <p class="lead text-center">Details about our Brand Collaborations service will be placed here.</p>
+  <h1 class="text-center">Micro-Influencer Collaboration</h1>
+  <p class="lead text-center">Low-budget outreach programs that connect small brands with engaged micro-influencers.</p>
 </div>
 
 <?php include 'includes/contact-modal.php'; ?>

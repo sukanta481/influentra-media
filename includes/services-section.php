@@ -4,52 +4,43 @@
     <h2 class="fw-bold">Discover Our <span class="text-primary">Media Services</span></h2>
     <p class="text-muted mb-5">At Influentra Media, we empower brands with digital-first influencer strategies.</p>
     <div class="row g-4">
-      <div class="col-6 col-sm-4 col-lg-2 ">
-        <a href="pro-audio-influencers.php" class="text-decoration-none text-dark">
+      <div class="col-6 col-sm-4 col-lg-2">
+        <a href="influencer-campaign-management.php" class="text-decoration-none text-dark">
           <div class="service-card p-4 shadow-sm bg-white rounded-4 h-100">
-            <img src="img/service1.png" class="img-fluid mb-3" alt="Pro Audio">
-            <h6 class="fw-bold mb-0">Pro Audio Influencers</h6>
+            <img src="img/service1.png" class="img-fluid mb-3" alt="Campaign Management">
+            <h6 class="fw-bold mb-0">Campaign Management</h6>
           </div>
         </a>
       </div>
       <div class="col-6 col-sm-4 col-lg-2">
-        <a href="social-campaigns.php" class="text-decoration-none text-dark">
+        <a href="influencer-discovery.php" class="text-decoration-none text-dark">
           <div class="service-card p-4 shadow-sm bg-white rounded-4 h-100">
-            <img src="img/service2.png" class="img-fluid mb-3" alt="Campaigns">
-            <h6 class="fw-bold mb-0">Social Campaigns</h6>
+            <img src="img/service2.png" class="img-fluid mb-3" alt="Discovery">
+            <h6 class="fw-bold mb-0">Influencer Discovery</h6>
           </div>
         </a>
       </div>
       <div class="col-6 col-sm-4 col-lg-2">
-        <a href="creative-content.php" class="text-decoration-none text-dark">
+        <a href="ugc-content-creation.php" class="text-decoration-none text-dark">
           <div class="service-card p-4 shadow-sm bg-white rounded-4 h-100">
-            <img src="img/service3.png" class="img-fluid mb-3" alt="Content">
-            <h6 class="fw-bold mb-0">Creative Content</h6>
+            <img src="img/service3.png" class="img-fluid mb-3" alt="UGC">
+            <h6 class="fw-bold mb-0">UGC Creation</h6>
           </div>
         </a>
       </div>
       <div class="col-6 col-sm-4 col-lg-2">
-        <a href="brand-collaborations.php" class="text-decoration-none text-dark">
+        <a href="micro-influencer-collaboration.php" class="text-decoration-none text-dark">
           <div class="service-card p-4 shadow-sm bg-white rounded-4 h-100">
-            <img src="img/service4.png" class="img-fluid mb-3" alt="Collabs">
-            <h6 class="fw-bold mb-0">Brand Collabs</h6>
+            <img src="img/service4.png" class="img-fluid mb-3" alt="Micro Collab">
+            <h6 class="fw-bold mb-0">Micro-Influencer Collab</h6>
           </div>
         </a>
       </div>
       <div class="col-6 col-sm-4 col-lg-2">
-        <a href="review-generation.php" class="text-decoration-none text-dark">
+        <a href="influencer-performance-reporting.php" class="text-decoration-none text-dark">
           <div class="service-card p-4 shadow-sm bg-white rounded-4 h-100">
-            <img src="img/service5.png" class="img-fluid mb-3" alt="Reviews">
-            <h6 class="fw-bold mb-0">Review Generation</h6>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6 col-sm-4 col-lg-2">
-        <a href="website-development.php" class="text-decoration-none text-dark">
-          <div class="service-card p-4 shadow-sm bg-white rounded-4 h-100">
-            <img src="img/service6.png" class="img-fluid mb-3" alt="Website Dev">
-            <h6 class="fw-bold mb-0">Website Development</h6>
+            <img src="img/service5.png" class="img-fluid mb-3" alt="Reporting">
+            <h6 class="fw-bold mb-0">Performance Reporting</h6>
           </div>
         </a>
       </div>

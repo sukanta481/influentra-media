@@ -74,87 +74,68 @@
 <section class="services-section">
   <div class="container">
     <div class="row justify-content-center">
-      <!-- Service: Pro Audio Influencers -->
+      <!-- Service: Influencer Campaign Management -->
       <div class="col-md-6 col-lg-4 d-flex">
-        <a href="pro-audio-influencers.php" class="text-decoration-none text-dark w-100">
+        <a href="influencer-campaign-management.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
-          <img src="img/service1.png" alt="Pro Audio Influencers" class="service-icon mb-2">
-          <div class="service-title">🎧 Pro Audio Influencers</div>
+          <img src="img/service1.png" alt="Influencer Campaign Management" class="service-icon mb-2">
+          <div class="service-title">📣 Influencer Campaign Management</div>
           <div class="service-desc">
-            Partner with creators who speak your industry’s language.<br>
-            We connect pro audio brands with trusted influencers in music, podcasting, sound engineering, and DJing.
+            Start-to-end setup, coordination and tracking for your influencer campaigns.
           </div>
-          <div class="service-meta">🔍 Target: musicians, producers, audio brands<br>📈 Result: trust, demos, engagement</div>
+          <div class="service-meta">🗂 Plan, execute & track campaigns</div>
         </div>
         </a>
       </div>
-      <!-- Service: Social Campaigns -->
+      <!-- Service: Influencer Discovery -->
       <div class="col-md-6 col-lg-4 d-flex">
-        <a href="social-campaigns.php" class="text-decoration-none text-dark w-100">
+        <a href="influencer-discovery.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
-          <img src="img/service2.png" alt="Social Campaigns" class="service-icon mb-2">
-          <div class="service-title">📣 Social Campaigns</div>
+          <img src="img/service2.png" alt="Influencer Discovery" class="service-icon mb-2">
+          <div class="service-title">🔍 Influencer Discovery & Shortlisting</div>
           <div class="service-desc">
-            Create viral buzz with custom social media influencer campaigns.<br>
-            We handle influencer selection, content briefing, and reporting.
+            Receive researched influencer lists tailored to your brand goals.
           </div>
-          <div class="service-meta">💡 Platforms: Instagram, TikTok, YouTube<br>🎯 Goal: reach, engagement, visibility</div>
+          <div class="service-meta">📑 Curated influencer options</div>
         </div>
         </a>
       </div>
-      <!-- Service: Creative Content -->
+      <!-- Service: UGC Content Creation -->
       <div class="col-md-6 col-lg-4 d-flex">
-        <a href="creative-content.php" class="text-decoration-none text-dark w-100">
+        <a href="ugc-content-creation.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
-          <img src="img/service3.png" alt="Creative Content" class="service-icon mb-2">
-          <div class="service-title">✨ Creative Content</div>
+          <img src="img/service3.png" alt="UGC Content Creation" class="service-icon mb-2">
+          <div class="service-title">🎬 UGC Content Creation Service</div>
           <div class="service-desc">
-            Authentic, scroll-stopping content built for modern consumers.<br>
-            Includes reviews, unboxings, tutorials, and lifestyle storytelling.
+            Help brands get real creator videos and photos for marketing.
           </div>
-          <div class="service-meta">📷 Deliverables: videos, UGC, stories<br>🔥 Uses: ads, feed, campaigns</div>
+          <div class="service-meta">📷 Authentic creator content</div>
         </div>
         </a>
       </div>
-      <!-- Service: Brand Collabs -->
+      <!-- Service: Micro-Influencer Collaboration -->
       <div class="col-md-6 col-lg-4 d-flex">
-        <a href="brand-collaborations.php" class="text-decoration-none text-dark w-100">
+        <a href="micro-influencer-collaboration.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
-          <img src="img/service4.png" alt="Brand Collabs" class="service-icon mb-2">
-          <div class="service-title">🤝 Brand Collaborations</div>
+          <img src="img/service4.png" alt="Micro-Influencer Collaboration" class="service-icon mb-2">
+          <div class="service-title">🤝 Micro-Influencer Collaboration</div>
           <div class="service-desc">
-            Build lasting partnerships that fuel brand advocacy.<br>
-            We facilitate long-term influencer ambassadorships.
+            Low-budget outreach programs designed for small business brands.
           </div>
-          <div class="service-meta">🧠 Focus: trust, repeat visibility, results<br>🚀 Ideal: launches, seasonal, ambassadors</div>
+          <div class="service-meta">💡 Budget-friendly campaigns</div>
         </div>
         </a>
       </div>
-      <!-- Service: Review Generation -->
+      <!-- Service: Influencer Performance Reporting -->
       <div class="col-md-6 col-lg-4 d-flex">
-        <a href="review-generation.php" class="text-decoration-none text-dark w-100">
+        <a href="influencer-performance-reporting.php" class="text-decoration-none text-dark w-100">
         <div class="service-card w-100">
-          <img src="img/service5.png" alt="Review Generation" class="service-icon mb-2">
-          <div class="service-title">🌟 Review Generation</div>
+          <img src="img/service5.png" alt="Influencer Performance Reporting" class="service-icon mb-2">
+          <div class="service-title">📊 Influencer Performance Reporting</div>
           <div class="service-desc">
-            Drive purchase decisions with authentic product reviews.<br>
-            Perfect for eCommerce, Amazon listings, and new product drops.
+            Analyze and report on influencer campaign results to measure ROI.
           </div>
-          <div class="service-meta">⭐ Types: unboxing, testimonials<br>🛒 Goal: conversion-focused UGC</div>
-        </div>
-        </a>
-      </div>
-      <!-- Service: Website Development -->
-      <div class="col-md-6 col-lg-4 d-flex">
-        <a href="website-development.php" class="text-decoration-none text-dark w-100">
-        <div class="service-card w-100">
-          <img src="img/service6.png" alt="Website Development" class="service-icon mb-2">
-          <div class="service-title">💻 Website Development</div>
-          <div class="service-desc">
-            Custom websites that convert visitors into customers.<br>
-            From landing pages to influencer portals and CMS.
-          </div>
-          <div class="service-meta">🛠️ Tech: HTML, CSS, PHP, Bootstrap<br>🌐 Add-ons: CMS, landing pages</div>
+          <div class="service-meta">📈 Detailed analytics</div>
         </div>
         </a>
       </div>
