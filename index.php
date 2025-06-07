@@ -29,6 +29,7 @@
   <?php include 'includes/technology-driven-section.php'; ?>
   <?php include 'includes/category-section.php'; ?>
   <?php include 'pages/faq-section.php'; ?>
+  <?php include 'includes/contact-modal.php'; ?>
 <?php include 'includes/footer.php'; ?>
 </body>
 </html>
