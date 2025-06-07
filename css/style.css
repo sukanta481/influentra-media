@@ -241,7 +241,7 @@ body {
 @media (min-width: 1200px) {
   .services-section .row.g-4 > div {
     flex: 0 0 auto;
-    width: 16.66%;
+    width: 20%;
   }
 }
 

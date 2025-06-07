@@ -3,7 +3,7 @@
   <div class="container text-center">
     <h2 class="fw-bold">Discover Our <span class="text-primary">Media Services</span></h2>
     <p class="text-muted mb-5">At Influentra Media, we empower brands with digital-first influencer strategies.</p>
-    <div class="row g-4">
+    <div class="row g-4 justify-content-center">
       <div class="col-6 col-sm-4 col-lg-2">
         <a href="influencer-campaign-management.php" class="text-decoration-none text-dark">
           <div class="service-card p-4 shadow-sm bg-white rounded-4 h-100">
